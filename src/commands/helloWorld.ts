@@ -18,10 +18,12 @@ const helloWorld: ICommand = {
         const language = (interaction.options.get("language")?.value as string).toLowerCase()
         const key = language as keyof typeof helloWorldData
         
-        if (helloWorldData[key] === undefined) {
+        if (helloWorldData[key] === undefined) 
+        {
             await interaction.reply("Language not available")
             return
         }
+
 
         await interaction.reply("```"+language+"\n"+helloWorldData[key]+"\n```")
     }
